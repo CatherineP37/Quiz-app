@@ -14,7 +14,10 @@ const questions = [
 const questionSection = document.querySelector('.question-section');
 const answers = document.querySelector('.answers');
 const answerSection = document.querySelector('answer-section');
+let questionIndex = 0;
 
 function quiz() {
-
+    questionSection.innerHTML = `${questions[questionIndex].question}`;
 }
+
+quiz();
