@@ -10,3 +10,9 @@ const questions = [
     correctAnswer: '1995',
 },
 ]
+
+const questionSection = document.querySelector('.question-section');
+
+function quiz() {
+
+}
