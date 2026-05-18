@@ -21,3 +21,10 @@ button {
     flex-direction: column;
     gap: 16px;
 }
+
+.next-button {
+    background-color: purple;
+    color: white;
+    padding: 12px 1rem;
+    border-radius: 8px;
+}
