@@ -8,3 +8,10 @@
 html {
 	font-family: Arial, Helvetica, sans-serif;   
 }
+
+button {
+    background-color: #000000;
+    color: #FFFFFF;
+    padding: 12px 1rem;
+    border-radius: 8px;
+}
