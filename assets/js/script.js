@@ -18,6 +18,9 @@ let questionIndex = 0;
 
 function quiz() {
     questionSection.innerHTML = `${questions[questionIndex].question}`;
+    questions[questionIndex].answerOptions.forEach((option) => {
+        answers.innerHTML += `<button>${option}</button>`;
+    })
 }
 
 quiz();
