@@ -12,6 +12,8 @@ const questions = [
 ]
 
 const questionSection = document.querySelector('.question-section');
+const answers = document.querySelector('.answers');
+
 
 function quiz() {
 
