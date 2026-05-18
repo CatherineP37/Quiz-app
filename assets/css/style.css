@@ -15,3 +15,9 @@ button {
     padding: 12px 1rem;
     border-radius: 8px;
 }
+
+.answers {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
