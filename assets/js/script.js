@@ -15,12 +15,14 @@ const questionSection = document.querySelector('.question-section');
 const answers = document.querySelector('.answers');
 const answerSection = document.querySelector('answer-section');
 let questionIndex = 0;
+const nextButton = document.getElementById('next');
 
 function quiz() {
     questionSection.innerHTML = `<p>${questions[questionIndex].question}</p>`;
     questions[questionIndex].answerOptions.forEach((option) => {
         answers.innerHTML += `<button>${option}</button>`;
     })
+    
 }
 
 quiz();

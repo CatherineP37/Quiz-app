@@ -28,7 +28,7 @@ button {
     gap: 16px;
 }
 
-.next-button {
+#next {
     background-color: purple;
     color: white;
     padding: 12px 1rem;
