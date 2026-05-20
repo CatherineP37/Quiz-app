@@ -17,7 +17,7 @@ const answerSection = document.querySelector('answer-section');
 let questionIndex = 0;
 
 function quiz() {
-    questionSection.innerHTML = `${questions[questionIndex].question}`;
+    questionSection.innerHTML = `<p>${questions[questionIndex].question}</p>`;
     questions[questionIndex].answerOptions.forEach((option) => {
         answers.innerHTML += `<button>${option}</button>`;
     })
