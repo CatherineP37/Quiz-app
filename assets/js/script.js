@@ -22,7 +22,13 @@ function quiz() {
     questions[questionIndex].answerOptions.forEach((option) => {
         answers.innerHTML += `<button>${option}</button>`;
     })
-    
+    nextButton.addEventListener('click', () => {
+        if(questionIndex === questions.length - 1){
+            questionIndex = 0;
+        } else {
+            questionIndex++;
+        }
+    })
 }
 
 quiz();
