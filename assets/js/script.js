@@ -28,7 +28,10 @@ function quiz() {
         } else {
             questionIndex++;
         }
+        quiz();
     })
+
+    
 }
 
 quiz();
