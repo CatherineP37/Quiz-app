@@ -16,11 +16,22 @@ const answers = document.querySelector('.answers');
 const answerSection = document.querySelector('answer-section');
 let questionIndex = 0;
 const nextButton = document.getElementById('next');
+const result = document.getElementById('result');
 
 function quiz() {
     questionSection.innerHTML = `<p>${questions[questionIndex].question}</p>`;
     questions[questionIndex].answerOptions.forEach((option) => {
-        answers.innerHTML += `<button>${option}</button>`;
+        answers.innerHTML += `<button='answer-button'>${option}</button>`;
+    })
+    let buttons = document.querySelectorAll('.answer-button');
+    buttons.forEach((button) => {
+        button.addEventListener('click', (e) => {
+            if(e.target.textContent === questions[questionIndex].correctAnswer){
+                result.innerText = 'Well done! that answer is correct.';             
+            } else {
+                result.innerText = 'That answer is not correct.';
+            }
+        })
     })
     nextButton.addEventListener('click', () => {
         if(questionIndex === questions.length - 1){
