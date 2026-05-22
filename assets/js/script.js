@@ -18,31 +18,21 @@ let questionIndex = 0;
 const nextButton = document.getElementById('next');
 const result = document.getElementById('result');
 
-function quiz() {
-    questionSection.innerHTML = `<p>${questions[questionIndex].question}</p>`;
-    questions[questionIndex].answerOptions.forEach((option) => {
-        answers.innerHTML += `<button='answer-button'>${option}</button>`;
+function quiz(index) {
+    questionSection.innerHTML = `<p>${questions[index].question}</p>`;
+    questions[index].answerOptions.forEach((option) => {
+        answers.innerHTML += `<button class='answer-button'>${option}</button>`;
     })
-    let buttons = document.querySelectorAll('.answer-button');
-    buttons.forEach((button) => {
-        button.addEventListener('click', (e) => {
-            if(e.target.textContent === questions[questionIndex].correctAnswer){
+    let answerButtons = document.querySelectorAll('.answer-button');
+    answerButtons.forEach((answerButton) => {
+        answerButton.addEventListener('click', (e) => {
+            if(e.target.textContent === questions[index].correctAnswer){
                 result.innerText = 'Well done! that answer is correct.';             
             } else {
                 result.innerText = 'That answer is not correct.';
             }
         })
     })
-    nextButton.addEventListener('click', () => {
-        if(questionIndex === questions.length - 1){
-            questionIndex = 0;
-        } else {
-            questionIndex++;
-        }
-        quiz();
-    })
-
-    
 }
 
-quiz();
+quiz(questionIndex);
