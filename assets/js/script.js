@@ -20,6 +20,7 @@ const result = document.getElementById('result');
 
 function quiz(index) {
     questionSection.innerHTML = `<p>${questions[index].question}</p>`;
+    answers.innerHTML = '';
     questions[index].answerOptions.forEach((option) => {
         answers.innerHTML += `<button class='answer-button'>${option}</button>`;
     })
