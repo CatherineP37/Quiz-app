@@ -33,6 +33,14 @@ function quiz(index) {
             }
         })
     })
+    nextButton.addEventListener('click', () => {
+      if(questionIndex === questions.length){
+        questionIndex = 0;
+      } else {
+        questionIndex++;
+      }
+      quiz(questionIndex);
+    })
 }
 
 quiz(questionIndex);
