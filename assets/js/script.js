@@ -28,7 +28,8 @@ function quiz(index) {
     answerButtons.forEach((answerButton) => {
         answerButton.addEventListener('click', (e) => {
             if(e.target.textContent === questions[index].correctAnswer){
-                result.innerText = 'Well done! that answer is correct.';             
+                result.innerText = 'Well done! that answer is correct.';
+                e.target.style.backgroundColor = 'green';        
             } else {
                 result.innerText = 'That answer is not correct.';
             }
