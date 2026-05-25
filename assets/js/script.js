@@ -32,6 +32,7 @@ function quiz(index) {
                 e.target.style.backgroundColor = 'green';        
             } else {
                 result.innerText = 'That answer is not correct.';
+                e.target.style.backgroundColor = 'red';
             }
         })
     })
