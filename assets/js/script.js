@@ -20,32 +20,45 @@ const result = document.getElementById('result');
 let correctAnswers = [];
 let incorrectAnswers = [];
 
-function quiz(index) {
-    questionSection.innerHTML = `<p>${questions[index].question}</p>`;
+function quiz() {
+    questionSection.innerHTML = `<p>${questions[questionIndex].question}</p>`;
     answers.innerHTML = '';
-    questions[index].answerOptions.forEach((option) => {
+    questions[questionIndex].answerOptions.forEach((option) => {
         answers.innerHTML += `<button class='answer-button'>${option}</button>`;
     })
     let answerButtons = document.querySelectorAll('.answer-button');
+    
     answerButtons.forEach((answerButton) => {
         answerButton.addEventListener('click', (e) => {
-            if(e.target.textContent === questions[index].correctAnswer){
+            if(e.target.textContent === questions[questionIndex].correctAnswer){              
                 result.innerText = 'Well done! that answer is correct.';
-                e.target.style.backgroundColor = 'green';        
+                e.target.style.backgroundColor = 'green';              
+                correctAnswers.push({
+                    question: questions[questionIndex].question,
+                    userAnswer: e.target.textContent,
+                    answer: questions[questionIndex].correctAnswer,
+                })         
             } else {
                 result.innerText = 'That answer is not correct.';
-                e.target.style.backgroundColor = 'red';
-            }
+                e.target.style.backgroundColor = 'red';                           
+                incorrectAnswers.push({
+                    question: questions[questionIndex].question,
+                    userAnswer: e.target.textContent,
+                    answer: questions[questionIndex].correctAnswer,
+                })              
+            }            
         })
     })
     nextButton.addEventListener('click', () => {
       if(questionIndex === questions.length){
-        questionIndex = 0;
+        questionIndex = 0;        
+        displayFeedback();
       } else {
         questionIndex++;
       }
-      quiz(questionIndex);
+      quiz();
     })
 }
+    
 
-quiz(questionIndex);
+quiz();
