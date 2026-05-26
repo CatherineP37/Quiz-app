@@ -59,6 +59,21 @@ function quiz() {
       quiz();
     })
 }
+
+function displayFeedback() {
+    correctAnswers.forEach((correctAnswer) => {
+        correctAnswersList.innerHTML += `<li><p>Question: ${correctAnswer.question}</p>
+        <p>Your answer: ${correctAnswer.userAnswer}</p>
+        <p>The correct answer: ${correctAnswer.answer}</p>  
+        </li>`;
+    })
+   incorrectAnswers.forEach((incorrectAnswer) => {
+        incorrectAnswersList.innerHTML += `<li><p>Question: ${incorrectAnswer.question}</p>
+        <p>Your answer: ${incorrectAnswer.userAnswer}</p>
+        <p>The correct answer: ${incorrectAnswer.answer}</p>
+        </li>`;
+    })
+}
     
 
 quiz();
