@@ -19,6 +19,8 @@ const nextButton = document.getElementById('next');
 const result = document.getElementById('result');
 let correctAnswers = [];
 let incorrectAnswers = [];
+let correctAnswersList = document.getElementById('correct_answers_list');
+
 
 function quiz() {
     questionSection.innerHTML = `<p>${questions[questionIndex].question}</p>`;
