@@ -63,18 +63,24 @@ function quiz() {
 }
 
 function displayFeedback() {
-    correctAnswers.forEach((correctAnswer) => {
-        correctAnswersList.innerHTML += `<li><p>Question: ${correctAnswer.question}</p>
+    if(correctAnswers.length > 0){
+        correctAnswers.forEach((correctAnswer) => {
+        correctAnswersList.innerHTML += `<h2>Correct answers</h2><li><p>Question: ${correctAnswer.question}</p>
         <p>Your answer: ${correctAnswer.userAnswer}</p>
         <p>The correct answer: ${correctAnswer.answer}</p>  
         </li>`;
     })
-   incorrectAnswers.forEach((incorrectAnswer) => {
+    }
+      if(incorrectAnswers.length > 0){
+        incorrectAnswers.forEach((incorrectAnswer) => {  
         incorrectAnswersList.innerHTML += `<li><p>Question: ${incorrectAnswer.question}</p>
         <p>Your answer: ${incorrectAnswer.userAnswer}</p>
         <p>The correct answer: ${incorrectAnswer.answer}</p>
         </li>`;
     })
+
+    }
+   
 }
     
 
