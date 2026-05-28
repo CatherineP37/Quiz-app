@@ -17,6 +17,8 @@ p {
     display: flex;
     flex-direction: column;
     gap: 16px;
+    padding: 1rem;
+    background-color: gray;
 }
 
 .answer-button {
