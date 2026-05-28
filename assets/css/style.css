@@ -13,6 +13,12 @@ p {
     color: #000000;
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
 .container {
     display: flex;
     flex-direction: column;
