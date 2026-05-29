@@ -63,25 +63,52 @@ function quiz() {
 }
 
 function displayFeedback() {
-    if(correctAnswers.length > 0){
+    if(correctAnswers.length === 1){
+        correctAnswersList.innerHTML += '<h2>Correct answer</h2>';
         correctAnswers.forEach((correctAnswer) => {
-        correctAnswersList.innerHTML += `<h2>Correct answers</h2><li><p>Question: ${correctAnswer.question}</p>
+        correctAnswersList.innerHTML += `<li><p>Question: ${correctAnswer.question}</p>
         <p>Your answer: ${correctAnswer.userAnswer}</p>
         <p>The correct answer: ${correctAnswer.answer}</p>  
-        </li>`;
-    })
+        </li>`;})
+    } else if(correctAnswers.length > 1){
+        correctAnswersList.innerHTML += '<h2>Correct answers</h2>';
+        correctAnswers.forEach((correctAnswer) => {
+        correctAnswersList.innerHTML += `<li><p>Question: ${correctAnswer.question}</p>
+        <p>Your answer: ${correctAnswer.userAnswer}</p>
+        <p>The correct answer: ${correctAnswer.answer}</p>  
+        </li>`;})
     }
-      if(incorrectAnswers.length > 0){
+
+    if(incorrectAnswers.length === 1) {
+        incorrectAnswersList.innerHTML += '<h2>Incorrect answer</h2>';
         incorrectAnswers.forEach((incorrectAnswer) => {  
-        incorrectAnswersList.innerHTML += `<h2>Incorrect answers</h2><li><p>Question: ${incorrectAnswer.question}</p>
+        incorrectAnswersList.innerHTML += `<li><p>Question: ${incorrectAnswer.question}</p>
+        <p>Your answer: ${incorrectAnswer.userAnswer}</p>
+        <p>The correct answer: ${incorrectAnswer.answer}</p>
+        </li>`;})
+    } else if(incorrectAnswers.length > 1) {
+        incorrectAnswersList.innerHTML += '<h2>Incorrect answers</h2>';
+        incorrectAnswers.forEach((incorrectAnswer) => {
+        incorrectAnswersList.innerHTML += `<li><p>Question: ${incorrectAnswer.question}</p>
+        <p>Your answer: ${incorrectAnswer.userAnswer}</p>
+        <p>The correct answer: ${incorrectAnswer.answer}</p>
+        </li>`;
+
+    })}
+        
+    
+    
+     
+        incorrectAnswers.forEach((incorrectAnswer) => {  
+        incorrectAnswersList.innerHTML += `<li><p>Question: ${incorrectAnswer.question}</p>
         <p>Your answer: ${incorrectAnswer.userAnswer}</p>
         <p>The correct answer: ${incorrectAnswer.answer}</p>
         </li>`;
     })
 
-    }
-   
 }
+
+
     
 
 quiz();
