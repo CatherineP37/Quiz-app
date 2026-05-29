@@ -22,6 +22,7 @@ main {
 }
 
 .container {
+    background-color: #FFFFFF;
     display: flex;
     flex-direction: column;
     gap: 16px;        
