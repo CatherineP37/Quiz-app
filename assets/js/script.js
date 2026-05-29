@@ -94,19 +94,7 @@ function displayFeedback() {
         <p>The correct answer: ${incorrectAnswer.answer}</p>
         </li>`;
 
-    })}
-        
-    
-    
-     
-        incorrectAnswers.forEach((incorrectAnswer) => {  
-        incorrectAnswersList.innerHTML += `<li><p>Question: ${incorrectAnswer.question}</p>
-        <p>Your answer: ${incorrectAnswer.userAnswer}</p>
-        <p>The correct answer: ${incorrectAnswer.answer}</p>
-        </li>`;
-    })
-
-}
+    })}}
 
 
     
