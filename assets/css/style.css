@@ -37,6 +37,7 @@ main {
     color: #FFFFFF;
     padding: 12px 1rem;
     border-radius: 8px;
+    border: 2px solid #000000;
     
 }
 
