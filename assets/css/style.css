@@ -56,9 +56,20 @@ main {
     border: 2px solid #000000;
 }
 
-.feedback {
-    list-style-type: none;
+.feedback {    
     display: flex;
     flex-direction: column;
     gap: 24px;
+}
+
+#correct_answers_list, #incorrect_answers_list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+#correct_answers_list li, #incorrect_answers_list li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
