@@ -73,7 +73,7 @@ function displayFeedback() {
     }
       if(incorrectAnswers.length > 0){
         incorrectAnswers.forEach((incorrectAnswer) => {  
-        incorrectAnswersList.innerHTML += `<li><p>Question: ${incorrectAnswer.question}</p>
+        incorrectAnswersList.innerHTML += `<h2>Incorrect answers</h2><li><p>Question: ${incorrectAnswer.question}</p>
         <p>Your answer: ${incorrectAnswer.userAnswer}</p>
         <p>The correct answer: ${incorrectAnswer.answer}</p>
         </li>`;
