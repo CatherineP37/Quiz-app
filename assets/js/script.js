@@ -14,6 +14,7 @@ const questions = [
 const questionSection = document.querySelector('.question-section');
 const answers = document.querySelector('.answers');
 const answerSection = document.querySelector('answer-section');
+const feedback = document.querySelector('.feedback');
 let questionIndex = 0;
 const nextButton = document.getElementById('next');
 const result = document.getElementById('result');
@@ -21,6 +22,7 @@ let correctAnswers = [];
 let incorrectAnswers = [];
 let correctAnswersList = document.getElementById('correct_answers_list');
 let incorrectAnswersList = document.getElementById('incorrect_answers_list');
+
 
 function quiz() {
     questionSection.innerHTML = `<p>${questions[questionIndex].question}</p>`;
@@ -32,7 +34,10 @@ function quiz() {
     
     answerButtons.forEach((answerButton) => {
         answerButton.addEventListener('click', (e) => {
-            if(e.target.textContent === questions[questionIndex].correctAnswer){              
+            if(e.target.textContent === questions[questionIndex].correctAnswer){
+                feedback.style.display = 'flex';
+                feedback.style.flexDirection = 'column';
+                feedback.style.gap = '24px';              
                 result.innerText = 'Well done! that answer is correct.';
                 e.target.style.backgroundColor = '#0F7145';              
                 correctAnswers.push({
@@ -41,6 +46,9 @@ function quiz() {
                     answer: questions[questionIndex].correctAnswer,
                 })         
             } else {
+                feedback.style.display = 'flex';
+                feedback.style.flexDirection = 'column';
+                feedback.style.gap = '24px';   
                 result.innerText = 'That answer is not correct.';
                 e.target.style.backgroundColor = '#890F0F';                           
                 incorrectAnswers.push({
