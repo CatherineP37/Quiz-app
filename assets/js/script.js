@@ -34,7 +34,7 @@ function quiz() {
         answerButton.addEventListener('click', (e) => {
             if(e.target.textContent === questions[questionIndex].correctAnswer){              
                 result.innerText = 'Well done! that answer is correct.';
-                e.target.style.backgroundColor = 'green';              
+                e.target.style.backgroundColor = '#0F7145';              
                 correctAnswers.push({
                     question: questions[questionIndex].question,
                     userAnswer: e.target.textContent,
@@ -42,7 +42,7 @@ function quiz() {
                 })         
             } else {
                 result.innerText = 'That answer is not correct.';
-                e.target.style.backgroundColor = 'red';                           
+                e.target.style.backgroundColor = '#890F0F';                           
                 incorrectAnswers.push({
                     question: questions[questionIndex].question,
                     userAnswer: e.target.textContent,
