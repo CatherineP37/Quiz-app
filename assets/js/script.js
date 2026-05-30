@@ -26,9 +26,7 @@ let incorrectAnswersList = document.getElementById('incorrect_answers_list');
 
 function quiz() {
     questionSection.innerHTML = `<p>${questions[questionIndex].question}</p>`;    
-    answers.innerHTML = '';
-    correctAnswersList.innerHTML = '';
-    incorrectAnswersList.innerHTML = '';
+    answers.innerHTML = '';    
     questions[questionIndex].answerOptions.forEach((option) => {
         answers.innerHTML += `<button class='answer-button'>${option}</button>`;
     })
@@ -36,7 +34,9 @@ function quiz() {
     
     answerButtons.forEach((answerButton) => {
         answerButton.addEventListener('click', (e) => {
-            if(e.target.textContent === questions[questionIndex].correctAnswer){                       
+            if(e.target.textContent === questions[questionIndex].correctAnswer){
+                correctAnswersList.innerHTML = '';
+                incorrectAnswersList.innerHTML = '';               
                 result.innerText = 'Well done! that answer is correct.';
                 e.target.style.backgroundColor = '#0F7145';              
                 correctAnswers.push({
