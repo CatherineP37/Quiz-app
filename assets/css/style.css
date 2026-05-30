@@ -58,7 +58,9 @@ main {
 
 .feedback {    
     background-color: #FFFFFF;
-    display: none;          
+    display: flex;
+    flex-direction: column;
+    gap: 24px;          
     width: 90%;
     padding: 1rem;
     border: 2px solid #000000;
