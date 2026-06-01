@@ -52,13 +52,15 @@ function quiz() {
                     userAnswer: e.target.textContent,
                     answer: questions[questionIndex].correctAnswer,
                 })              
-            }            
+            }
+            if(questionIndex === questions.length){               
+            displayFeedback();      
+        }         
         })
     })
     nextButton.addEventListener('click', () => {
       if(questionIndex === questions.length){
-        questionIndex = 0;        
-        displayFeedback();
+        questionIndex = 0;       
       } else {
         questionIndex++;
       }
