@@ -58,15 +58,7 @@ function quiz() {
         }         
         })
     })
-    nextButton.addEventListener('click', () => {
-      if(questionIndex === questions.length){
-        questionIndex = 0;       
-      } else {
-        questionIndex++;
-      }
-      quiz();
-    })
-}
+  }
 
 function displayFeedback() {
     if(correctAnswers.length === 1){
