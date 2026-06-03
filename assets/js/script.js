@@ -53,12 +53,14 @@ function quiz() {
                     answer: questions[questionIndex].correctAnswer,
                 })}       
                                   
-                if(questionIndex === questions.length){
-            questionIndex = 0;               
-            displayFeedback();}
-            else {
+                if(questionIndex === questions.length){                    
+                    questionIndex = 0;
+                        displayFeedback();      
+                    }
+                    else {
                 questionIndex++;
-            }    
+            }
+            quiz();   
         })
     })
   }
