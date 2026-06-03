@@ -43,17 +43,17 @@ function quiz() {
                     question: questions[questionIndex].question,
                     userAnswer: e.target.textContent,
                     answer: questions[questionIndex].correctAnswer,
-                })         
-            } else {                
+                })}
+                else {                
                 result.innerText = 'That answer is not correct.';
                 e.target.style.backgroundColor = '#890F0F';                           
                 incorrectAnswers.push({
                     question: questions[questionIndex].question,
                     userAnswer: e.target.textContent,
                     answer: questions[questionIndex].correctAnswer,
-                })                           
-            }
-            if(questionIndex === questions.length){
+                })}       
+                                  
+                if(questionIndex === questions.length){
             questionIndex = 0;               
             displayFeedback();}
             else {
