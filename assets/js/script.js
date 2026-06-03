@@ -51,11 +51,14 @@ function quiz() {
                     question: questions[questionIndex].question,
                     userAnswer: e.target.textContent,
                     answer: questions[questionIndex].correctAnswer,
-                })              
+                })                           
             }
-            if(questionIndex === questions.length){               
-            displayFeedback();      
-        }         
+            if(questionIndex === questions.length){
+            questionIndex = 0;               
+            displayFeedback();}
+            else {
+                questionIndex++;
+            }    
         })
     })
   }
